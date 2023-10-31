@@ -9,8 +9,8 @@ class City
 
   # Method to find distance between two cities
   def distance(another_city)
-    x_distance = (@x_cor - another_city.x).abs
-    y_distance = (@y_cor - another_city.y).abs
+    x_distance = (@x_cor - another_city.x_cor).abs
+    y_distance = (@y_cor - another_city.y_cor).abs
     Math.sqrt((x_distance ** 2) + (y_distance ** 2)).round(2)
   end
 
