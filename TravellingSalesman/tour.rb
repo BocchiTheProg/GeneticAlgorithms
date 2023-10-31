@@ -1,6 +1,6 @@
 # class to represent the full tour across all cities
 class Tour
-  attr_accessor :cities, :fitness, :distance
+  attr_reader :cities, :fitness, :distance
 
   def initialize(cities)
     # combination of visited cities will be a chromosome
@@ -25,7 +25,7 @@ class Tour
   def fitness
     return @fitness if @fitness # don`t calculate again, if already did it at least once
     # the bigger this value is - the better tour is among others
-    @fitness = (1 / @distance.to_f).round(4)
+    @fitness = (1 / distance.to_f).round(4)
   end
 
   def to_s
