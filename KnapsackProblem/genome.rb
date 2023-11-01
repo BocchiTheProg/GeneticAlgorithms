@@ -24,16 +24,9 @@ class Genome
     @fitness
   end
 
-  # Single-point crossover
-  def crossover(other)
-    breakpoint = rand(@genes.size)
-    child_genes = @genes[0...breakpoint] + other.genes[breakpoint..-1]
-    Genome.new(child_genes)
-  end
-
   # Flip bit mutation
-  def mutate!
-    @genes = @genes.map { |gene| gene == 1 ? 0 : 1}
+  def mutate!(probability)
+    @genes = @genes.map { |gene| gene == 1 ? 0 : 1} if probability > rand
   end
 
   def to_s
