@@ -1,9 +1,10 @@
+# class to represent included items in knapsack, 1 - item include, 0 - no item
 class Genome
   attr_accessor :genes
   attr_reader :fitness
 
   def initialize(genes = nil)
-    # chromosome is built of 10 genes which can 1 or 0
+    # chromosome is built of 10 genes (we will gave maximum of 10 items) which can be 1 or 0
     @genes = genes || Array.new(10) { rand(2) }
     @fitness = 0
   end
